@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schoolbooklets Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>schoolbooklets.com</h1>
+      <input type="text" id="searchBar" placeholder="Search games...">
+    </div>
+  </header>
+
+  <main>
+    <div class="games-grid">
+      <div class="game-card" data-name="supermariobros">
+        <img src="images/supermariobros.png" alt="SuperMarioBros">
+        <h3>SuperMarioBros</h3>
+        <button onclick="openGame('games/supermariobros.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="sonicthehedchog">
+        <img src="images/sonicthehedchog.png" alt="SonicTheHedchog">
+        <h3>SonicTheHedchog</h3>
+        <button onclick="openGame('games/sonicthehedchog.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="mariocart">
+        <img src="images/mariocart.png" alt="MarioCart">
+        <h3>MarioCart</h3>
+        <button onclick="openGame('games/mariocart.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="supermariorun">
+        <img src="images/supermariorun.png" alt="SuperMarioRun">
+        <h3>SuperMarioRun</h3>
+        <button onclick="openGame('games/supermariorun.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="obbytower">
+        <img src="images/obbytower.png" alt="ObbyTower">
+        <h3>ObbyTower</h3>
+        <button onclick="openGame('games/obbytower.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="supermario64">
+        <img src="images/supermario64.png" alt="SuperMario64">
+        <h3>SuperMario64</h3>
+        <button onclick="openGame('games/supermario64.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="doom">
+        <img src="images/doom.png" alt="Doom">
+        <h3>Doom</h3>
+        <button onclick="openGame('games/doom.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="slope3">
+        <img src="images/slope3.png" alt="Slope3">
+        <h3>Slope3</h3>
+        <button onclick="openGame('games/slope3.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="tabs">
+        <img src="images/tabs.png" alt="Tabs">
+        <h3>Tabs</h3>
+        <button onclick="openGame('games/tabs.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="bottleflip">
+        <img src="images/bottleflip.png" alt="BottleFlip">
+        <h3>BottleFlip</h3>
+        <button onclick="openGame('games/bottleflip.html')">Play</button>
+      </div>
+
+      <div class="game-card" data-name="minigolfmaster">
+        <img src="images/minigolfmaster.png" alt="MiniGolfMaster">
+        <h3>MiniGolfMaster</h3>
+        <button onclick="openGame('games/minigolfmaster.html')">Play</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function openGame(url) {
+      const win = window.open(url, '_blank');
+      if (!win) alert('Please allow popups for this site.');
+    }
+
+    const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('input', function() {
+      const term = this.value.toLowerCase();
+      document.querySelectorAll('.game-card').forEach(card => {
+        const name = card.getAttribute('data-name');
+        card.style.display = name.includes(term) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

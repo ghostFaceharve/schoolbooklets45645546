@@ -1,0 +1,108 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body & Background */
+body {
+  background: #f4f4f9;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #6aa84f, #3d85c6);
+  padding: 25px 0;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#searchBar {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1rem;
+  width: 300px;
+  max-width: 100%;
+}
+
+/* Main Grid */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 25px;
+  padding: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.game-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.game-card img {
+  width: 100%;
+  height: 200px; /* Bigger images */
+  object-fit: cover;
+}
+
+.game-card h3 {
+  padding: 12px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.game-card button {
+  margin-bottom: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #6aa84f;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.game-card button:hover {
+  background: #3d85c6;
+}
+
+/* Responsive */
+@media (max-width: 1600px) { .games-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 1200px) { .games-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 900px)  { .games-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 650px)  { .games-grid { grid-template-columns: repeat(2, 1fr); } 
+                              .header-content { flex-direction: column; align-items: flex-start; gap: 15px; } }
+@media (max-width: 400px)  { .games-grid { grid-template-columns: 1fr; } }
